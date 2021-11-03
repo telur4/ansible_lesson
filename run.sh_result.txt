@@ -1,0 +1,158 @@
+[root@localhost centos6]# ./run.sh
+Loaded plugins: fastestmirror
+Setting up Update Process
+Loading mirror speeds from cached hostfile
+ * epel: d2lzkl7pfhq30w.cloudfront.net
+ * remi-safe: ftp.riken.jp
+No Packages marked for Update
+ [WARNING]: provided hosts list is empty, only localhost is available. Note that
+the implicit localhost does not match 'all'
+
+
+PLAY [localhost] *****************************************************************
+
+TASK [Gathering Facts] ***********************************************************
+ok: [localhost]
+
+TASK [disable iptables] **********************************************************
+ok: [localhost]
+
+TASK [install libselinux-python] *************************************************
+ok: [localhost]
+
+TASK [Disabled SELinux] **********************************************************
+ [WARNING]: SELinux state change will take effect next reboot
+
+ok: [localhost]
+
+TASK [remove localtime] **********************************************************
+changed: [localhost]
+
+TASK [change timezone] ***********************************************************
+changed: [localhost]
+
+TASK [install remi repository] ***************************************************
+ [WARNING]: Consider using the yum, dnf or zypper module rather than running rpm.
+If you need to use command because yum, dnf or zypper is insufficient you can add
+warn=False to this command task or set command_warnings=False in ansible.cfg to
+get rid of this message.
+
+changed: [localhost]
+
+TASK [install man] ***************************************************************
+ok: [localhost]
+
+TASK [install apache] ************************************************************
+ok: [localhost]
+
+TASK [start apache and enabled] **************************************************
+ok: [localhost]
+
+TASK [change owner] **************************************************************
+ok: [localhost]
+
+TASK [copy httpd.conf] ***********************************************************
+ok: [localhost]
+
+TASK [install gd-last] ***********************************************************
+ok: [localhost]
+
+TASK [install php] ***************************************************************
+ok: [localhost]
+
+TASK [copy php.ini.custom] *******************************************************
+ok: [localhost]
+
+TASK [install mysql repository] **************************************************
+changed: [localhost]
+
+TASK [install mysql] *************************************************************
+ok: [localhost]
+
+TASK [copy my.cnf.custom] ********************************************************
+ok: [localhost]
+
+TASK [start mysql and enabled] ***************************************************
+ok: [localhost]
+
+TASK [install ruby dependencies] *************************************************
+ok: [localhost]
+
+TASK [check rbenv installed] *****************************************************
+changed: [localhost]
+
+TASK [git clone rbenv] ***********************************************************
+skipping: [localhost]
+
+TASK [update bash_profile] *******************************************************
+ok: [localhost]
+
+TASK [check ruby-build installed] ************************************************
+changed: [localhost]
+
+TASK [git clone ruby-build] ******************************************************
+skipping: [localhost]
+
+TASK [update rbenv] **************************************************************
+changed: [localhost]
+
+TASK [update ruby-build] *********************************************************
+changed: [localhost]
+
+TASK [check ruby installed] ******************************************************
+changed: [localhost]
+
+TASK [install ruby] **************************************************************
+fatal: [localhost]: FAILED! => {"changed": true, "cmd": "/bin/bash -lc \"rbenv install 2.3.1 && rbenv rehash && rbenv global 2.3.1\"", "delta": "0:00:00.008994", "end": "2021-11-03 22:43:16.897927", "msg": "non-zero return code", "rc": 127, "start": "2021-11-03 22:43:16.888933", "stderr": "/bin/bash: rbenv: command not found", "stderr_lines": ["/bin/bash: rbenv: command not found"], "stdout": "", "stdout_lines": []}
+        to retry, use: --limit @/home/vagrant/centos6/main.retry
+
+PLAY RECAP ***********************************************************************
+localhost                  : ok=26   changed=9    unreachable=0    failed=1
+
+
+
+TASK [check pyenv installed] *****************************************************
+changed: [localhost]
+
+TASK [git clone pyenv] ***********************************************************
+changed: [localhost]
+
+TASK [check pyvirtual installed] *************************************************
+changed: [localhost]
+
+TASK [git clone pyenv-virtual] ***************************************************
+changed: [localhost]
+
+TASK [update pyenv] **************************************************************
+changed: [localhost]
+
+TASK [update pyenv-virtualenv] ***************************************************
+changed: [localhost]
+
+TASK [check python installed] ****************************************************
+changed: [localhost]
+
+TASK [install python] ************************************************************
+fatal: [localhost]: FAILED! => {"changed": true, "cmd": "/bin/bash -lc \"pyenv install 3.5.2 && pyenv rehash && pyenv global 3.5.2\"", "delta": "0:00:00.008683", "end": "2021-11-03 22:59:14.875363", "msg": "non-zero return code", "rc": 127, "start": "2021-11-03 22:59:14.866680", "stderr": "/bin/bash: pyenv: command not found", "stderr_lines": ["/bin/bash: pyenv: command not found"], "stdout": "", "stdout_lines": []}
+        to retry, use: --limit @/home/vagrant/centos6/main.retry
+
+PLAY RECAP ***********************************************************************
+localhost                  : ok=33   changed=16   unreachable=0    failed=1
+
+TASK [check node js installed] ***************************************************
+changed: [localhost]
+
+TASK [install node script] *******************************************************
+changed: [localhost]
+
+TASK [install nodejs] ************************************************************
+changed: [localhost]
+
+TASK [install npm] ***************************************************************
+changed: [localhost]
+
+TASK [change locale] *************************************************************
+changed: [localhost]
+
+PLAY RECAP ***********************************************************************
+localhost                  : ok=36   changed=19   unreachable=0    failed=0
