@@ -27,4 +27,4 @@
 
 ## 読み途中
 
-- [rbenv や pyenv の "command not found" で困っている人のための解説](https://qiita.com/tonluqclml/items/d433744387149185e647 "rbenv や pyenv の "command not found" で困っている人のための解説")
+- [rbenv や pyenv の "command not found" で困っている人のための解説](https://qiita.com/tonluqclml/items/d433744387149185e647 "rbenv や pyenv の \"command not found\" で困っている人のための解説")
